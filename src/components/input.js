@@ -133,8 +133,6 @@ const Input = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const taxRate = items.taxRate;
-
     const computedItems = items.map(item => {
       const netAmount = ((item.unitPrice * item.quantity) - (item.unitPrice * item.quantity) * (item.discount * 0.01));
       const taxType = placeOfSupply === placeOfDelivery ? 'CGST & SGST' : 'IGST';
